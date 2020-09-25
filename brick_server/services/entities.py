@@ -95,6 +95,7 @@ class EntitiesByFileResource:
         if content_type == 'text/turtle':
             ttl_io = StringIO(turtle)
             ttl_backup = deepcopy(ttl_io)
+            # See: https://github.com/jbkoh/brick_data/blob/master/brick_data/sparql/brick_endpoint.py#L312
             await self.brick_db.load_rdffile(ttl_io, graph=graph)
             if add_owner:
                 g = rdflib.Graph()

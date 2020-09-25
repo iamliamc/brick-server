@@ -53,7 +53,7 @@ If you want to learn more about Brick, please visit [brickschema.org](https://br
     3. Add them inside ``configs/configs.json``
 7. Run ``python entry.py`` to run the server.
 8. Run ``python examples/test_api.py`` in another console.
-9. API Documentation would be available at https://localhost/api/v1/doc
+9. API Documentation would be available at https://localhost/docs/openapi.json
 10. Install and run the fronted based on its instruction: https://gitlab.com/jbkoh/brick-server-frontend
 
 

@@ -29,6 +29,9 @@ lock_manager = LockManager(lockmanager_configs['host'],
 actuation_iface = DummyActuation()
 
 brick_configs = configs['brick']
+
+# Refer to:
+# https://github.com/jbkoh/brick_data/blob/master/brick_data/sparql/brick_endpoint_async.py
 brick_sparql = BrickSparqlAsync(brick_configs['host'],
                                 brick_configs['brick_version'],
                                 graph=brick_configs['base_graph'],
@@ -53,4 +56,4 @@ ts_db = AsyncpgTimeseries(brick_ts_configs['dbname'],
 try:
     asyncio.ensure_future(ts_db.init())
 except asyncpg.exceptions.DuplicateTableError:
-    print('Timescale tabels have been already created.')
+    print('Timescale tables have been already created.')

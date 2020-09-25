@@ -28,7 +28,7 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         token_lifetime = int(sys.argv[1])
     else:
-        token_lifetime = 3600
+        token_lifetime = 36000000
     print(token_lifetime)
     print(create_jwt_token(token_lifetime).decode('utf-8'))
     #print(create_jwt_token(3600*24*365).decode('utf-8'))
