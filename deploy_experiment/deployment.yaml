@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: virtuoso-db
+  namespace: kubedb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: virtuoso-db
+  template:
+    metadata:
+      labels:
+        app: virtuoso-db
+    spec:
+      containers:
+        - name: virtuoso-db
+          image: tenforce/virtuoso:latest
+          imagePullPolicy: Always
+          env:
+          - name: SPARQL_UPDATE
+            value: "true"
+          ports:
+          - containerPort: 8890
+          - containerPort: 1111
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "125m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+

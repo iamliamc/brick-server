@@ -1,0 +1,3 @@
+kubectl apply -f service.yaml -n kubedb
+kubectl apply -f deployment.yaml -n kubedb
+kubectl -n kubedb port-forward svc/virtuoso-db 8890:8890
